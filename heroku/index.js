@@ -21,7 +21,7 @@ var token = process.env.TOKEN || 'token';
 var received_updates = [];
 
 app.get('/', function(req, res) {
-  console.log(req);
+  // console.log(req);
   res.send('<pre>' + JSON.stringify(received_updates, null, 2) + '</pre>');
 });
 
@@ -39,13 +39,13 @@ app.get(['/facebook', '/instagram', '/webhooks'], function(req, res) {
 app.post('/webhooks', function(req, res) {
   console.log('Webhooks request body:', JSON.stringify(req.body));
 
-  if (!req.isXHubValid()) {
-    console.log('Warning - request header X-Hub-Signature not present or invalid');
-    res.sendStatus(401);
-    return;
-  }
-
-  console.log('request header X-Hub-Signature validated');
+  // if (!req.isXHubValid()) {
+  //   console.log('Warning - request header X-Hub-Signature not present or invalid');
+  //   res.sendStatus(401);
+  //   return;
+  // }
+  //
+  // console.log('request header X-Hub-Signature validated');
   // Process the Facebook updates here
   received_updates.unshift(req.body);
   res.sendStatus(200);

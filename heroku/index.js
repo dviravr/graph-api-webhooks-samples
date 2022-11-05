@@ -37,7 +37,7 @@ app.get(['/facebook', '/instagram', '/webhooks'], function(req, res) {
 });
 
 app.post('/webhooks', function(req, res) {
-  console.log('Facebook request body:', req.body);
+  console.log('Webhooks request body:', JSON.stringify(req.body));
 
   if (!req.isXHubValid()) {
     console.log('Warning - request header X-Hub-Signature not present or invalid');

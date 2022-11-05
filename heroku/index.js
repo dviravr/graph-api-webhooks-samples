@@ -26,7 +26,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/webhooks', function (req, res) {
-  res.send(req);
+  res.send('hello webhooks');
 })
 
 app.get(['/facebook', '/instagram'], function(req, res) {

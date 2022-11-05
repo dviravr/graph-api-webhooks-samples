@@ -36,7 +36,7 @@ app.get(['/facebook', '/instagram', '/webhooks'], function(req, res) {
   }
 });
 
-app.post('/facebook', function(req, res) {
+app.post('/webhooks', function(req, res) {
   console.log('Facebook request body:', req.body);
 
   if (!req.isXHubValid()) {
